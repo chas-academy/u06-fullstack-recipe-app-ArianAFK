@@ -1,0 +1,34 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="/starters">Starters</a>
+      <a mat-list-item href="/mains">Mains</a>
+      <a mat-list-item href="/desserts">Desserts</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="p-5" color="primary">
+      @if (isHandset$ | async) {
+      <button type="button" aria-label="Toggle sidenav">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      }
+      <span class="h1 "><a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page"
+          class="text-decoration-none text-white">Juicy</a></span>
+      <form action="">
+        <input type="text" placeholder="Search recipe..."><button type="button">Search</button>
+      </form>
+      <ul class="list-group list-unstyled d-flex flex-row">
+        <li class="list-item p-3"><a href="" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page"
+            class="text-decoration-none text-white">login</a></li>
+        <li class="list-item p-3"><a routerLink="/register" routerLinkActive="active" ariaCurrentWhenActive="page"
+            class="text-decoration-none text-white">Register</a></li>
+      </ul>
+    </mat-toolbar>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
