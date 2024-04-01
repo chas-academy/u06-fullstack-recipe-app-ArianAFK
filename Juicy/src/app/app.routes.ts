@@ -6,14 +6,15 @@ import { HomeComponent } from './pages/home/home.component';
 import { StartersComponent } from './pages/starters/starters.component';
 import { MainsComponent } from './pages/mains/mains.component';
 import { DessertsComponent } from './pages/desserts/desserts.component';
-import { RecipesearchComponent } from './pages/recipesearch/recipesearch.component';
+import { RecipeComponent } from './pages/recipe/recipe.component';
+
 
 export const routes: Routes = [
-    { path: 'home', component: HomeComponent },
+    { path: '', component: HomeComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'starters', component: StartersComponent },
     { path: 'mains', component: MainsComponent },
     { path: 'desserts', component: DessertsComponent },
-    { path: 'recipesearch', component: RecipesearchComponent },
+    { path: 'recipe/:id', component: RecipeComponent },
 ];

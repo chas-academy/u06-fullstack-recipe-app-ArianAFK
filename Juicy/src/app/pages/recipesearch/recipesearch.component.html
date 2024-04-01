@@ -1,3 +1,43 @@
-<p>recipesearch works!</p>
+<!-- <p>recipesearch works!</p>
 
 <button (click)="searchRecipe()">Get Recipes</button>
+
+@for (recipe of recipes; track recipe) {
+<article>
+    <h2>{{ recipe.label }}</h2>
+    <img src="{{recipe.image}}">
+    <p>Total time: {{ recipe.totalTime }} min.</p>
+    <p>{{ recipe.self }}</p>
+    <ul>
+        @for (ingredientLine of recipe.ingredientLines; track ingredientLine) {
+        <h3>Ingredients: </h3>
+        <li>{{ ingredientLine }}</li>
+        }
+    </ul>
+</article> 
+<div class=" d-flex flex-wrap justify-content-around align-items-start">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title>{{ recipe.label }}</mat-card-title>
+            <mat-card-subtitle>Total time: {{ recipe.totalTime }} min.</mat-card-subtitle>
+        </mat-card-header>
+        <img src="{{recipe.image}}">
+        <mat-card-content>
+            <p>
+                {{ recipe.self }}
+            </p>
+            <br>
+            <ul>
+                @for (ingredientLine of recipe.ingredientLines; track ingredientLine) {
+                <h3>Ingredients: </h3>
+                <li>{{ ingredientLine }}</li>
+                }
+            </ul>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+} -->

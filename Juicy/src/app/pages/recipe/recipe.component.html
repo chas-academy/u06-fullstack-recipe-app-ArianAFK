@@ -1,0 +1,12 @@
+<div class="">
+    <img class="" [src]="recipe?.image" alt="">
+    <div class="">
+        <h5 class=""> {{recipe?.label}}</h5>
+        <ol class="">
+            <li> Prep time: {{recipe.totalTime}}</li>
+            @for (ingredient of recipe?.ingredientLines; track ingredient){
+            <li>{{ingredient}}</li>
+            }
+        </ol>
+    </div>
+</div>

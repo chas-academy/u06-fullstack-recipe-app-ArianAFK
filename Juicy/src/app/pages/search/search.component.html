@@ -1,0 +1,11 @@
+<div class="bg-secondary">
+    <div class="d-flex justify-content-center p-4">
+        <input [(ngModel)]="querySearch" type="search" id="default-search">
+        <button type="submit" [disabled]="!querySearch" (click)="onSearch()">Search</button>
+    </div>
+    <div class="d-flex justify-content-center p-4 ">
+        <mat-slide-toggle [(ngModel)]="vegan" (change)="onSearch()" class="me-5">Vegan</mat-slide-toggle>
+        <mat-slide-toggle [(ngModel)]="dairy" (change)="onSearch()" class="me-5">Dairy-free</mat-slide-toggle>
+        <mat-slide-toggle [(ngModel)]="gluten" (change)="onSearch()" class="me-5">Gluten-free</mat-slide-toggle>
+    </div>
+</div>

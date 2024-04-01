@@ -8,6 +8,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { } from '@fortawesome/free-solid-svg-icons';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { SearchComponent } from './pages/search/search.component';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,8 @@ import { RegisterComponent } from './pages/register/register.component';
     FooterComponent,
     FontAwesomeModule,
     LoginComponent,
-    RegisterComponent],
+    RegisterComponent,
+    SearchComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

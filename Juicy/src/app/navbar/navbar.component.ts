@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { SearchComponent } from '../pages/search/search.component';
 
 @Component({
   selector: 'app-navbar',
@@ -24,7 +25,8 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
     AsyncPipe,
     RouterLink,
     RouterLinkActive,
-    RouterOutlet
+    RouterOutlet,
+    SearchComponent
   ]
 })
 export class NavbarComponent {
