@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { AsyncPipe } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { SearchComponent } from '../pages/search/search.component';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -29,12 +30,28 @@ import { SearchComponent } from '../pages/search/search.component';
     SearchComponent
   ]
 })
-export class NavbarComponent {
-  private breakpointObserver = inject(BreakpointObserver);
+export class NavbarComponent implements OnInit {
 
+  private breakpointObserver = inject(BreakpointObserver);
+  private authService = inject(AuthService);
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
       shareReplay()
     );
+
+  loggedIn: boolean = false
+  ngOnInit(): void {
+    this.authService.getTokenState().subscribe(state => {
+      this.loggedIn = state
+    })
+  }
+  logout() {
+    const token = localStorage.getItem("token")
+    this.authService.postLogout(token).subscribe(res => {
+      localStorage.removeItem("token")
+      this.authService.updateTokenState()
+      console.log(res);
+    })
+  }
 }

@@ -7,14 +7,15 @@ import { StartersComponent } from './pages/starters/starters.component';
 import { MainsComponent } from './pages/mains/mains.component';
 import { DessertsComponent } from './pages/desserts/desserts.component';
 import { RecipeComponent } from './pages/recipe/recipe.component';
+import { authGuard } from './guards/auth.guard';
 
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
-    { path: 'starters', component: StartersComponent },
-    { path: 'mains', component: MainsComponent },
-    { path: 'desserts', component: DessertsComponent },
+    { path: 'starters', component: StartersComponent, canActivate: [authGuard] },
+    { path: 'mains', component: MainsComponent, canActivate: [authGuard] },
+    { path: 'desserts', component: DessertsComponent, canActivate: [authGuard] },
     { path: 'recipe/:id', component: RecipeComponent },
 ];
