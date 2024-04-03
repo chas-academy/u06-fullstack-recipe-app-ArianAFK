@@ -1,16 +1,15 @@
 <app-search [dishType]="dishType" (recipesEmitter)="recieveRecipes($event)"></app-search>
-<div class="">
+<div class="d-flex flex-wrap justify-content-center mt-4">
     @for (recipe of recipes; track recipe) {
-    <article (click)="goToDetails(recipe)" class="">
-        <img src="{{recipe.image}}" class="">
-        <h3 class="">{{ recipe.label }}</h3>
-        <p class="">{{recipe.self}}</p>
-        <ul class="">
-            @for (ingredientLine of recipe.ingredientLines; track ingredientLine) {
-            <li>{{ingredientLine}}</li>
-            }
-        </ul>
-    </article>
+    <div (click)="goToDetails(recipe)" class="card mb-4 me-4" style="width: 18rem">
+
+        <div class="image-container">
+            <img [src]="recipe.image" class="card-img-top" alt="..." />
+        </div>
+        <div class="card-body d-flex justify-content-center">
+            <h3 class="card-title">{{ recipe.label | titlecase }}</h3>
+        </div>
+    </div>
     } @empty {
     <p>There are no recipes...</p>
     }

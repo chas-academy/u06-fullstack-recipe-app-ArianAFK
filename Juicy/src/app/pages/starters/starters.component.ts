@@ -2,12 +2,11 @@ import { Component, Input, input } from '@angular/core';
 import { RecipeService } from '../../services/recipe.service';
 import { SearchComponent } from '../search/search.component';
 import { Router } from '@angular/router';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-mains',
   standalone: true,
-  imports: [SearchComponent, MatCardModule, MatButtonModule],
+  imports: [SearchComponent, CommonModule],
   templateUrl: './starters.component.html',
   styleUrl: './starters.component.css'
 })

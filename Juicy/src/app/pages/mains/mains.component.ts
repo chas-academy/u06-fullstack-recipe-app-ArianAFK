@@ -2,10 +2,11 @@ import { Component, Input, input } from '@angular/core';
 import { RecipeService } from '../../services/recipe.service';
 import { SearchComponent } from '../search/search.component';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-mains',
   standalone: true,
-  imports: [SearchComponent,],
+  imports: [SearchComponent, CommonModule],
   templateUrl: './mains.component.html',
   styleUrl: './mains.component.css'
 })

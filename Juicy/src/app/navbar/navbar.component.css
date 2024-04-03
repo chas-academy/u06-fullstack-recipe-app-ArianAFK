@@ -20,3 +20,23 @@
 .list-item {
   cursor: pointer;
 }
+
+@media only screen and (max-width : 390px) {
+  .mat-toolbar.mat-primary {
+    .h1 {
+      a {
+        margin-left: 195px;
+      }
+    }
+  }
+
+  .sidenav {
+    li {
+      font-size: 25px;
+    }
+  }
+
+  .list {
+    margin-top: 30px;
+  }
+}

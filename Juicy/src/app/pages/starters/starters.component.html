@@ -15,7 +15,7 @@
     <p>There are no recipes...</p>
     } -->
 
-@for (recipe of recipes; track recipe) {
+<!-- @for (recipe of recipes; track recipe) {
 <article (click)="goToDetails(recipe)" class="">
     <mat-card class="example-card">
         <mat-card-header>
@@ -25,7 +25,7 @@
         <img src="{{recipe.image}}" class="">
         <br>
         <mat-card-content>
-            <p class="">{{recipe.self}}</p>
+            <p>Total time: {{ recipe.totalTime }} min.</p>
             <ul class="">
                 @for (ingredientLine of recipe.ingredientLines; track ingredientLine) {
                 <li>{{ingredientLine}}</li>
@@ -39,4 +39,45 @@
 </article>
 } @empty {
 <p>There are no recipes...</p>
-}
+} -->
+
+<!-- @for (recipe of recipes; track recipe) {
+<div (click)="goToDetails(recipe)" class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+        <div class="card h-100">
+            <img src="{{recipe.image}}" class="">
+            <div class="card-body">
+                <h5 class="card-title">{{ recipe.label }}</h5>
+                <p>Total time: {{ recipe.totalTime }} min.</p>
+                <ul class="">
+                    @for (ingredientLine of recipe.ingredientLines; track ingredientLine) {
+                    <li>{{ingredientLine}}</li>
+                    }
+                </ul>
+            </div>
+            <div class="card-footer">
+                <button mat-button class="d-flex justify-content-center bg-primary">Add to list</button>
+            </div>
+        </div>
+    </div>
+</div>
+} @empty {
+<p>There are no recipes...</p>
+} -->
+
+
+<div class="d-flex flex-wrap justify-content-center mt-4">
+    @for (recipe of recipes; track recipe) {
+    <div (click)="goToDetails(recipe)" class="card mb-4 me-4" style="width: 18rem">
+
+        <div class="image-container">
+            <img [src]="recipe.image" class="card-img-top" alt="..." />
+        </div>
+        <div class="card-body d-flex justify-content-center">
+            <h3 class="card-title">{{ recipe.label | titlecase }}</h3>
+        </div>
+    </div>
+    } @empty {
+    <p>There are no recipes...</p>
+    }
+</div>
