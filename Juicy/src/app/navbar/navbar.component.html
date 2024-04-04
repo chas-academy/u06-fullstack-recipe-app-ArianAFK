@@ -3,9 +3,9 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="/starters">Starters</a>
-      <a mat-list-item href="/mains">Mains</a>
-      <a mat-list-item href="/desserts">Desserts</a>
+      <a mat-list-item routerLink="/starters">Starters</a>
+      <a mat-list-item routerLink="/mains">Mains</a>
+      <a mat-list-item routerLink="/desserts">Desserts</a>
       <div class="list">
         @if ((isHandset$ | async) === true) {
         @if (!loggedIn) {
