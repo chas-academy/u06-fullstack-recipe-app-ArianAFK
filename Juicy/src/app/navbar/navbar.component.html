@@ -9,12 +9,12 @@
       <div class="list">
         @if ((isHandset$ | async) === true) {
         @if (!loggedIn) {
-        <li class="list-item p-3"><a href="" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page"
+        <li class="list-item p-3"><a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page"
             class="text-decoration-none text-white">Login</a></li>
         <li class="list-item p-3"><a routerLink="/register" routerLinkActive="active" ariaCurrentWhenActive="page"
             class="text-decoration-none text-white">Register</a></li>
         } @else {
-        <li class="list-item p-3"><a href="" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page"
+        <li class="list-item p-3"><a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page"
             class="text-decoration-none text-white">My list</a></li>
         <li class="list-item p-3" (click)="logout()">Logout</li>
         }
@@ -34,12 +34,12 @@
       <ul class="list-group list-unstyled d-flex flex-row">
         @if ((isHandset$ | async) !== true) {
         @if (!loggedIn) {
-        <li class="list-item p-3"><a href="" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page"
+        <li class="list-item p-3"><a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page"
             class="text-decoration-none text-white">Login</a></li>
         <li class="list-item p-3"><a routerLink="/register" routerLinkActive="active" ariaCurrentWhenActive="page"
             class="text-decoration-none text-white">Register</a></li>
         } @else {
-        <li class="list-item p-3"><a href="" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page"
+        <li class="list-item p-3"><a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page"
             class="text-decoration-none text-white">My list</a></li>
         <li class="list-item p-3" (click)="logout()">Logout</li>
         }

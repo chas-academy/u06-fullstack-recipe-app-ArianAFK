@@ -16,6 +16,6 @@
             [disabled]="!registerObj.name || !registerObj.email || !registerObj.password || !registerObj.password_confirmation"
             type="submit" (click)="onRegister()">Register</button>
         <br>
-        <a href="/login">Login</a>
+        <a routerLink="/login">Login</a>
     </form>
 </div>
