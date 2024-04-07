@@ -27,10 +27,10 @@
 }  */
 
 @media only screen and (max-width : 390px) {
-    .container {
+    .con {
         padding: 0px;
 
-        .footer {
+        .footer-content {
             span {
                 margin-right: 25px;
             }
